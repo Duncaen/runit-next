@@ -1,0 +1,15 @@
+config.h
+config.mk
+*.[od]
+socklog/socklog
+socklog/tryto
+socklog/uncat
+runit/runit
+runit/runit-init
+runit/runsv
+runit/runsvchdir
+runit/runsvdir
+runit/svlogd
+runit/sv
+sockit/sockit
+sockit/sockin

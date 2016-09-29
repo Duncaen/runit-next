@@ -1,0 +1,5 @@
+#define HASSIGACTION 1
+#define HASWAITPID 1
+#define HASSIGPROCMASK 1
+#define HASMKFIFO 1
+#define HASFLOCK 1
