@@ -2,50 +2,32 @@
 
 #include "byte.h"
 
-unsigned int byte_rchr(s, n, c)
-char *s;
-register unsigned int n;
-int c;
+size_t
+byte_rchr(void *dest, size_t n, uint8_t c)
 {
-	register char ch;
-	register char *t;
-	register char *u;
-
-	ch = c;
-	t = s;
-	u = 0;
+	uint8_t *s = dest;
+	uint8_t ch = c;
+	uint8_t *t = s;
+	uint8_t *u = 0;
 
 	for (;;) {
 		if (!n) break;
-
 		if (*t == ch) u = t;
-
-		++t;
-		--n;
+		++t; --n;
 
 		if (!n) break;
-
 		if (*t == ch) u = t;
-
-		++t;
-		--n;
+		++t; --n;
 
 		if (!n) break;
-
 		if (*t == ch) u = t;
-
-		++t;
-		--n;
+		++t; --n;
 
 		if (!n) break;
-
 		if (*t == ch) u = t;
-
-		++t;
-		--n;
+		++t; --n;
 	}
 
 	if (!u) u = t;
-
 	return u - s;
 }

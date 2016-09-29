@@ -2,46 +2,32 @@
 
 #include "byte.h"
 
-unsigned int byte_chr(s, n, c)
-char *s;
-register unsigned int n;
-int c;
+size_t
+byte_chr(void *s, size_t n, uint8_t c)
 {
-	register char ch;
-	register char *t;
+	uint8_t ch;
+	uint8_t *t;
 
 	ch = c;
 	t = s;
 
 	for (;;) {
 		if (!n) break;
-
 		if (*t == ch) break;
-
-		++t;
-		--n;
+		++t; --n;
 
 		if (!n) break;
-
 		if (*t == ch) break;
-
-		++t;
-		--n;
+		++t; --n;
 
 		if (!n) break;
-
 		if (*t == ch) break;
-
-		++t;
-		--n;
+		++t; --n;
 
 		if (!n) break;
-
 		if (*t == ch) break;
-
-		++t;
-		--n;
+		++t; --n;
 	}
 
-	return t - s;
+	return t - (uint8_t *)s;
 }
